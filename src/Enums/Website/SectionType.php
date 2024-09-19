@@ -11,9 +11,9 @@ enum SectionType: string
     case Private = 'private';
     case DataTable = 'data_table';
     case Documentation = 'documentation';
-    case  AccordionView = 'accordion_view';
+    case AccordionView = 'accordion_view';
     case PrivateWithSearch = 'private_with_search';
-    case  PublicForm = 'public_form';
+    case PublicForm = 'public_form';
 
     public static function getWebsiteSections(): array
     {
@@ -26,10 +26,7 @@ enum SectionType: string
             self::Documentation->value,
             self::AccordionView->value,
             self::PrivateWithSearch->value,
-            self::PublicForm->value
+            self::PublicForm->value,
         ];
     }
-
-
-
 }

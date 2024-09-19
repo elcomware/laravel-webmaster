@@ -14,5 +14,4 @@ enum PageDesign: string
             self::MultiPage->value,
         ];
     }
-
 }

@@ -32,15 +32,15 @@ return new class extends Migration
         Schema::create('webmaster_mail_settings', function (Blueprint $table) {
             $table->id();
             $table->boolean('is_active')->default(false);
-            $table->string('driver', length:50);
+            $table->string('driver', length: 50);
             $table->string('host');
-            $table->string('port', length:50);
-            $table->string('username',length:100);
+            $table->string('port', length: 50);
+            $table->string('username', length: 100);
             $table->string('password');
             $table->string('encryption');
             $table->string('from_address');
             $table->string('from_name');
-            $table->string('title',length:100)->nullable();
+            $table->string('title', length: 100)->nullable();
             $table->longText('template')->nullable();
 
             $table->foreignId('created_by')->nullable()
@@ -72,7 +72,6 @@ return new class extends Migration
 
             $table->json('social_links')->nullable(); // all possible social links key-value
 
-
             $table->string('style_primary_color')->nullable()->default('#33b5db');
             $table->string('style_secondary_color')->nullable()->default('#2e3e4e');
             $table->string('style_tertiary_color')->nullable()->default('#0cbaa4');
@@ -86,7 +85,7 @@ return new class extends Migration
                 ->default(PageDesign::SinglePage->value);
 
             $table->enum('style_header_design', HeaderDesign::getHeaders())
-                ->default(HeaderDesign::HeaderMovable->value,);
+                ->default(HeaderDesign::HeaderMovable->value);
             $table->enum('style_footer_design', FooterDesign::getFooters())
                 ->default(FooterDesign::FooterStyle1->value);
 
@@ -108,12 +107,9 @@ return new class extends Migration
             $table->boolean('notify_table_status')->default(false);
             $table->boolean('notify_private_status')->default(false);
 
-
             $table->boolean('under_maintenance')->default(false);
             $table->boolean('is_active')->default(true);
             $table->text('close_msg')->nullable();
-
-
 
             $table->foreignId('created_by')->nullable()
                 ->constrained()->cascadeOnDelete();
@@ -129,7 +125,7 @@ return new class extends Migration
             $table->foreignId('parent_id')->nullable();
             $table->json('title')->nullable();
             $table->boolean('is_active')->default(true);
-            $table->enum('link_type',MenuType::getSitMenus())
+            $table->enum('link_type', MenuType::getSitMenus())
                 ->default(MenuType::MainMenu->value);
 
             $table->integer('cat_id')->nullable();
@@ -175,7 +171,6 @@ return new class extends Migration
             $table->json('seo_keywords')->nullable();
             $table->string('seo_url_slug')->nullable();
 
-
             $table->foreignId('created_by')->nullable()
                 ->constrained()->cascadeOnDelete();
             $table->foreignId('last_edited_by')->nullable()
@@ -183,7 +178,6 @@ return new class extends Migration
             $table->unsignedTinyInteger('version')->default(1);
             $table->timestamps();
         });
-
 
         Schema::create('webmaster_section_fields', function (Blueprint $table) {
             $table->id();
@@ -222,7 +216,6 @@ return new class extends Migration
             $table->json('name');
             $table->string('topic_id');
 
-
             $table->foreignId('created_by')->nullable()
                 ->constrained()->cascadeOnDelete();
             $table->foreignId('last_edited_by')->nullable()
@@ -243,7 +236,6 @@ return new class extends Migration
             $table->foreignId('topic_category_id')
                 ->constrained('webmaster_topic_categories');
 
-
             $table->json('title')->nullable();
             $table->json('details')->nullable();
 
@@ -254,7 +246,6 @@ return new class extends Migration
             $table->string('attach_file')->nullable();
             $table->text('video_file')->nullable();
             $table->string('audio_file')->nullable();
-
 
             $table->tinyInteger('status');
             $table->integer('visits');
@@ -268,13 +259,10 @@ return new class extends Migration
             $table->unsignedInteger('parent_id');
             $table->unsignedInteger('row_no');
 
-
-
             $table->json('seo_title')->nullable();
             $table->json('seo_description')->nullable();
             $table->json('seo_keywords')->nullable();
             $table->json('seo_url_slug')->nullable();
-
 
             $table->foreignId('created_by')->nullable()
                 ->constrained()->cascadeOnDelete();
@@ -283,8 +271,6 @@ return new class extends Migration
             $table->unsignedTinyInteger('version')->default(1);
             $table->timestamps();
         });
-
-
 
         Schema::create('webmaster_seo_settings', function (Blueprint $table) {
             $table->id();
@@ -340,7 +326,6 @@ return new class extends Migration
             $table->unsignedTinyInteger('version')->default(1);
             $table->timestamps();
         });
-
 
     }
 

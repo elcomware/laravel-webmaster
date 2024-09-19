@@ -4,24 +4,23 @@ namespace Elcomwares\WebMaster\Enums\WebSite;
 
 enum SectionFields: int
 {
-
-    case TextBox=1;
-    case TextArea=2;
-    case Number=3;
-    case PhoneNumber=4;
-    case EmailAddress=5;
-    case Date=6;
-    case DateTime=7;
-    case Select=8;
-    case Radio=9;
-    case MultiSelect=10;
-    case Checkbox=11;
-    case PhotoFile=12;
-    case AttachFile=13;
-    case VideoFile=14;
-    case YoutubeVideoLink=15;
-    case VimeoVideoLink=16;
-    case FixedTextOrDivide=17;
+    case TextBox = 1;
+    case TextArea = 2;
+    case Number = 3;
+    case PhoneNumber = 4;
+    case EmailAddress = 5;
+    case Date = 6;
+    case DateTime = 7;
+    case Select = 8;
+    case Radio = 9;
+    case MultiSelect = 10;
+    case Checkbox = 11;
+    case PhotoFile = 12;
+    case AttachFile = 13;
+    case VideoFile = 14;
+    case YoutubeVideoLink = 15;
+    case VimeoVideoLink = 16;
+    case FixedTextOrDivide = 17;
 
     public static function getSectionFields(): array
     {
@@ -45,6 +44,4 @@ enum SectionFields: int
             self::FixedTextOrDivide->value,
         ];
     }
-
-
 }

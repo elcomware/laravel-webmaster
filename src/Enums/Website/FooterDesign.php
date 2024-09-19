@@ -8,7 +8,6 @@ enum FooterDesign: string
     case FooterStyle2 = 'footer_style2';
     case FooterStyle3 = 'footer_style3';
 
-
     public static function getFooters(): array
     {
         return [
@@ -18,5 +17,4 @@ enum FooterDesign: string
         ];
 
     }
-
 }
