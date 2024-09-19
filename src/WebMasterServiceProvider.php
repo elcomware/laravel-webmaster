@@ -26,7 +26,7 @@ class WebMasterServiceProvider extends PackageServiceProvider
             ->publishesServiceProvider('WebMasterServiceProvider')
             ->hasRoute('webmaster')
 
-            ->hasMigration('create_laravel-webmaster_table')
+            ->hasMigration('create_laravel-webmaster_tables')
             ->hasCommand(WebMasterCommand::class)
 
             ->hasInstallCommand(function (InstallCommand $command) {
@@ -34,8 +34,8 @@ class WebMasterServiceProvider extends PackageServiceProvider
                     ->publishConfigFile()
                     ->publishAssets()
                     ->publishMigrations()
-                    ->copyAndRegisterServiceProviderInApp()
-                    ->askToStarRepoOnGitHub();
+                    ->copyAndRegisterServiceProviderInApp();
+                    //->askToStarRepoOnGitHub();
             });
     }
 }

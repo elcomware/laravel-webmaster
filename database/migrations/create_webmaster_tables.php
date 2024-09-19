@@ -13,9 +13,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedInteger('webmaster_id');
             $table->unsignedInteger('type');
-            $table->json('title')->nullable();
+            $table->json('title')->nullable();//in all supported languages
             $table->string('default_value')->nullable();
-            $table->json('details')->nullable();
+            $table->json('details')->nullable(); //in all supported languag
             $table->unsignedInteger('row_no');
             $table->unsignedTinyInteger('status');
             $table->unsignedTinyInteger('required');
