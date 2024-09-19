@@ -2,9 +2,9 @@
 
 namespace Elcomwares\WebMaster\Tests;
 
+use Elcomwares\WebMaster\WebMasterServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Elcomwares\WebMaster\WebMasterServiceProvider;
 
 class TestCase extends Orchestra
 {

@@ -38,7 +38,6 @@ return new class extends Migration
             $table->timestamps();
         });
 
-
         Schema::create('webmaster_custom_settings', function (Blueprint $table) {
             $table->id();
 
@@ -63,9 +62,9 @@ return new class extends Migration
             $table->boolean('maintenance_mode')->default(false);
 
             $table->foreignId('created_by')->nullable()
-            ->constrained()->cascadeOnDelete();
+                ->constrained()->cascadeOnDelete();
             $table->foreignId('last_edited_by')->nullable()
-            ->constrained()->cascadeOnDelete();
+                ->constrained()->cascadeOnDelete();
             $table->unsignedTinyInteger('version')->default(1);
             $table->timestamps();
         });
@@ -90,10 +89,8 @@ return new class extends Migration
             $table->tinyInteger('notify_table_status')->nullable();
             $table->tinyInteger('notify_private_status')->nullable();
 
-
             $table->text('close_msg')->nullable();
             $table->json('social_links')->nullable(); // all possible social links key-value
-
 
             $table->string('contact_t1_ar')->nullable();
             $table->string('contact_t1_en')->nullable();
@@ -106,7 +103,7 @@ return new class extends Migration
 
             $table->string('style_logo_ar')->nullable();
             $table->string('style_logo_en')->nullable();
-            $table->string('style_fav')->nullable();;
+            $table->string('style_fav')->nullable();
             $table->string('style_apple')->nullable();
             $table->string('style_color1')->nullable();
             $table->string('style_color2')->nullable();
@@ -136,9 +133,9 @@ return new class extends Migration
             $table->string('robots_txt')->nullable();
 
             $table->foreignId('created_by')->nullable()
-            ->constrained()->cascadeOnDelete();
+                ->constrained()->cascadeOnDelete();
             $table->foreignId('last_edited_by')->nullable()
-            ->constrained()->cascadeOnDelete();
+                ->constrained()->cascadeOnDelete();
             $table->unsignedTinyInteger('version')->default(1);
             $table->timestamps();
         });
@@ -150,9 +147,9 @@ return new class extends Migration
             $table->string('hotjar_id')->nullable();
 
             $table->foreignId('created_by')->nullable()
-            ->constrained()->cascadeOnDelete();
+                ->constrained()->cascadeOnDelete();
             $table->foreignId('last_edited_by')->nullable()
-            ->constrained()->cascadeOnDelete();
+                ->constrained()->cascadeOnDelete();
             $table->unsignedTinyInteger('version')->default(1);
             $table->timestamps();
         });
@@ -165,32 +162,32 @@ return new class extends Migration
             $table->string('font_family')->nullable();
 
             $table->foreignId('created_by')->nullable()
-            ->constrained()->cascadeOnDelete();
+                ->constrained()->cascadeOnDelete();
             $table->foreignId('last_edited_by')->nullable()
-            ->constrained()->cascadeOnDelete();
+                ->constrained()->cascadeOnDelete();
             $table->unsignedTinyInteger('version')->default(1);
             $table->timestamps();
         });
 
         Schema::create('webmaster_locale_settings', function (Blueprint $table) {
             $table->id();
-            $table->string('code', length:10);
-            $table->string('name', length:100);
-            $table->string('direction',length: 10)->nullable();
-            $table->string('left',length: 10)->nullable();
-            $table->string('right',length: 10)->nullable();
-            $table->string('icon',length: 50)->nullable();
+            $table->string('code', length: 10);
+            $table->string('name', length: 100);
+            $table->string('direction', length: 10)->nullable();
+            $table->string('left', length: 10)->nullable();
+            $table->string('right', length: 10)->nullable();
+            $table->string('icon', length: 50)->nullable();
             $table->tinyInteger('box_status')->default(true)->nullable();
             $table->tinyInteger('is_active')->default(true)->nullable();
-            $table->string('currency_code', length:10)->nullable();
-            $table->string('currency_name', length:100)->nullable();
+            $table->string('currency_code', length: 10)->nullable();
+            $table->string('currency_name', length: 100)->nullable();
 
             $table->boolean('is_default')->default(false);
 
             $table->foreignId('created_by')->nullable()
-            ->constrained()->cascadeOnDelete();
+                ->constrained()->cascadeOnDelete();
             $table->foreignId('last_edited_by')->nullable()
-            ->constrained()->cascadeOnDelete();
+                ->constrained()->cascadeOnDelete();
             $table->unsignedTinyInteger('version')->default(1);
             $table->timestamps();
         });

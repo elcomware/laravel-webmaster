@@ -2,10 +2,10 @@
 
 namespace Elcomwares\WebMaster;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Elcomwares\WebMaster\Commands\WebMasterCommand;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
+use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class WebMasterServiceProvider extends PackageServiceProvider
 {
@@ -29,7 +29,7 @@ class WebMasterServiceProvider extends PackageServiceProvider
             ->hasMigration('create_laravel-webmaster_table')
             ->hasCommand(WebMasterCommand::class)
 
-            ->hasInstallCommand(function(InstallCommand $command) {
+            ->hasInstallCommand(function (InstallCommand $command) {
                 $command
                     ->publishConfigFile()
                     ->publishAssets()
