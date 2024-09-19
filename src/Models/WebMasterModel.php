@@ -7,15 +7,16 @@ use Illuminate\Support\Facades\Auth;
 
 class WebMasterModel extends model
 {
-
     /**
      * @var int|mixed|string|null
      */
     public mixed $created_by;
+
     /**
      * @var int|mixed|string|null
      */
     public mixed $last_edited_by;
+
     /**
      * @var int|mixed
      */

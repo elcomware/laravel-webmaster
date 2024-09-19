@@ -35,7 +35,7 @@ class WebMasterServiceProvider extends PackageServiceProvider
                     ->publishAssets()
                     ->publishMigrations()
                     ->copyAndRegisterServiceProviderInApp();
-                    //->askToStarRepoOnGitHub();
+                //->askToStarRepoOnGitHub();
             });
     }
 }

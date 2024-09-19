@@ -28,7 +28,7 @@ class TestCase extends Orchestra
     {
         config()->set('database.default', 'testing');
         // Set up default user authentication for testing
-        config()->set('auth.providers.users.model',\Elcomwares\WebMaster\Models\User::class);
+        config()->set('auth.providers.users.model', \Elcomwares\WebMaster\Models\User::class);
 
         //$migration = include __DIR__.'/../database/migrations/create_webmaster_tables.php.stub';
         $migration = include __DIR__.'/../database/migrations/create_webmaster_tables.php';

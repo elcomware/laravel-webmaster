@@ -5,7 +5,6 @@ namespace Elcomwares\WebMaster\Database\Factories;
 use Elcomwares\WebMaster\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-
 class UserFactory extends Factory
 {
     protected $model = User::class;
@@ -19,4 +18,3 @@ class UserFactory extends Factory
         ];
     }
 }
-

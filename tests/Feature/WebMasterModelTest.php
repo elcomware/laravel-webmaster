@@ -1,13 +1,11 @@
 <?php
 
-
 use Elcomwares\WebMaster\Models\User;
 use Elcomwares\WebMaster\Models\WebMasterModel;
-use Elcomwares\WebMaster\Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Auth;
 
-uses( RefreshDatabase::class);
+uses(RefreshDatabase::class);
 
 beforeEach(function () {
     $this->user = User::factory()->create();
@@ -15,12 +13,14 @@ beforeEach(function () {
 });
 
 it('sets created_by, updated_by, and version on create', function () {
-    $model = new class extends WebMasterModel {
+    $model = new class extends WebMasterModel
+    {
         protected $table = 'test_models';
+
         protected $guarded = [];
     };
 
-    $model->name = "John Doe";
+    $model->name = 'John Doe';
     $model->save();
 
     expect($model->created_by)->toBe($this->user->id)
@@ -29,17 +29,18 @@ it('sets created_by, updated_by, and version on create', function () {
 });
 
 it('updates last_edited_by and increments version on update', function () {
-    $model = new class extends WebMasterModel {
+    $model = new class extends WebMasterModel
+    {
         protected $table = 'test_models';
+
         protected $guarded = [];
     };
 
-    $model->name = "John Doe";
+    $model->name = 'John Doe';
     $model->save();
 
-    $model->name = "Jane Doe";
+    $model->name = 'Jane Doe';
     $model->update();
-
 
     expect($model->last_edited_by)->toBe($this->user->id)
         ->and($model->version)->toBe(2);
