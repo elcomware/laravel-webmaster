@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Elcomwares\WebMaster\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class WebMasterCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-webmaster';
 
     public $description = 'My command';
 

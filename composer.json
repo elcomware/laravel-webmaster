@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "elcomwares/laravel-webmaster",
+    "description": "packahe to manage websites settings, including SEO, Analytics, Themes, Language and more",
     "keywords": [
-        ":vendor_name",
+        "elcomwares",
         "laravel",
-        ":package_slug"
+        "laravel-webmaster"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/elcomwares/laravel-webmaster",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "elcomwares",
+            "email": "elcomwares@gmail.com",
             "role": "Developer"
         }
     ],
@@ -35,19 +35,20 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "Elcomwares\\WebMaster\\": "src/",
+            "Elcomwares\\WebMaster\\Database\\Factories\\": "database/factories/"
+
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
+            "Elcomwares\\WebMaster\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
     "scripts": {
         "post-autoload-dump": "@composer run prepare",
-        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "clear": "@php vendor/bin/testbench package:purge-laravel-webmaster --ansi",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "build": [
             "@composer run prepare",
@@ -73,10 +74,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Elcomwares\\WebMaster\\WebMasterServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "WebMaster": "Elcomwares\\WebMaster\\Facades\\WebMaster"
             }
         }
     },
